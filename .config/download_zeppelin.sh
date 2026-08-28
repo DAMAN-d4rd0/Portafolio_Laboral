@@ -3,6 +3,7 @@
 # Detener el script si ocurre un error
 set -e
 set -x
+
 # Configuración de variables
 ZEPPELIN_TARGET_DIR="/home/vscode/zeppelin"
 DOWNLOAD_ZEPPELIN="/workspaces/Portafolio_Laboral"

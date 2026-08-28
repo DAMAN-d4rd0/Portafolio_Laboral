@@ -17,7 +17,6 @@ if [ ! -d "$ZEPPELIN_TARGET_DIR" ]; then
     mkdir -p "$ZEPPELIN_TARGET_DIR"
     URL="https://dlcdn.apache.org/zeppelin/zeppelin-0.12.1/zeppelin-0.12.1-bin-all.tgz"
     wget "$URL"
-
     
     echo "✅ Descarga completa"
 else
