@@ -33,7 +33,7 @@
         }
     },
     "waitFor": "onCreateCommand",
-    "updateContentCommand": "-C python3 -m pip install -r requirements.txt && bash cp ./config/download_zeppelin.sh /home/vscode/ && bash chmod +x /home/vscode/download_zeppelin.sh && bash.home/vscode/download_zeppelin.sh ",
+    "updateContentCommand": "bash .devcontainer/setup.sh",
     "postStartCommand": "/home/vscode/zeppelin/bin/zeppelin-daemon.sh start",
     "customizations": {
         "codespaces": {
