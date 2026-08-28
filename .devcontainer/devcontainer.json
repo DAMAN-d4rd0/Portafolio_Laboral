@@ -23,14 +23,16 @@
     "portsAttributes": {
         "8080": {
             "label": "Apache Zeppelin UI",
-            "onAutoForward": "openPreview"
+            "onAutoForward": "openPreview",
+            "visibility": "public" 
         },
         "8989": {
             "label": "Jupyter Notebook UI",
-            "onAutoForward": "openPreview"
+            "onAutoForward": "openPreview",
+            "visibility": "public" 
         }
     },
-    "postCreateCommand": "pip3 install -r requirements.txt && wget -q https://dlcdn.apache.org/zeppelin/zeppelin-0.12.1/zeppelin-0.12.1-bin-all.tgz && tar -xzf zeppelin-0.12.1-bin-all.tgz && mv zeppelin-0.12.2-bin-all /home/vscode/zeppelin && rm zeppelin-0.12.1-bin-all.tgz",
+    "postCreateCommand": "pip3 install -r requirements.txt && cp ./config/download_zeppelin.sh /home/vscode/ && chmod +x /home/vscode/download_zeppelin.sh && .home/vscode/download_zeppelin.sh ",
     "postStartCommand": "/home/vscode/zeppelin/bin/zeppelin-daemon.sh start",
     "customizations": {
         "codespaces": {
