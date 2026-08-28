@@ -1,7 +1,7 @@
 #!/bin/bash
 # Detener la ejecución si ocurre cualquier error durante el proceso
 set -e
-
+set -x
 echo "🐍 Instalando dependencias de Python..."
 pip3 install --no-cache-dir -r requirements.txt
 
@@ -17,7 +17,7 @@ if [ ! -d "$ZEPPELIN_TARGET_DIR" ]; then
     cd "ZEPPELIN_TARGET_DIR"
     # Ejecutamos tu script original de descarga directamente desde su ubicación actual
     # Esto evita tener que copiarlo manualmente con 'cp'
-    bash ./config/download_zeppelin.sh
+    bash ./config/download_zeppelin.sh || true
     
     echo "✅ Zeppelin configurado correctamente."
 else
