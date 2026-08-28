@@ -8,7 +8,7 @@ echo "🐍 Instalando dependencias de Python..."
 echo "📦 Iniciando la configuración de Apache Zeppelin..."
 
 # Definir rutas
-ZEPPELIN_TARGET_DIR="/home/vscode/zeppelin"
+ZEPPELIN_TARGET_DIR="/home/vscode/.zeppelin"
 DOWNLOAD_ZEPPELIN="/workspaces/Portafolio_Laboral"
 ARCHIVO="zeppelin-0.12.1-bin-all.tgz"
 # Comprobar si Zeppelin ya está instalado para no repetir la descarga si el contenedor se reconstruye
@@ -18,7 +18,7 @@ if [ ! -d "$ZEPPELIN_TARGET_DIR" ]; then
     URL="https://dlcdn.apache.org/zeppelin/zeppelin-0.12.1/zeppelin-0.12.1-bin-all.tgz"
     wget "$URL" "$TARGET_DIR"
     tar -zvf "$ARCHIVO" -C "$ZEPPELIN_TARGET_DIR"
-    rm -rf "$DOWNLOAD_ZEPPELIN/$ARCHIVO"
+    rm -rf "$ARCHIVO"
     # Ejecutamos tu script original de descarga directamente desde su ubicación actual
     # Esto evita tener que copiarlo manualmente con 'cp'
     # bash ./config/download_zeppelin.sh 
