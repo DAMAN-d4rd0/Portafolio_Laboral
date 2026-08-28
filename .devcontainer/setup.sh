@@ -9,7 +9,7 @@ echo "📦 Iniciando la configuración de Apache Zeppelin..."
 
 # Definir rutas
 ZEPPELIN_TARGET_DIR="/home/vscode/zeppelin"
-TARGET_DIR="/home/vscode/"
+TARGET_DIR="/workspaces"
 # Comprobar si Zeppelin ya está instalado para no repetir la descarga si el contenedor se reconstruye
 if [ ! -d "$ZEPPELIN_TARGET_DIR" ]; then
     echo "⬇️ Descargando Zeppelin (usando tu script original)..."
