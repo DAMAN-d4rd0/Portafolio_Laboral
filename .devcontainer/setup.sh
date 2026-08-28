@@ -17,7 +17,7 @@ if [ ! -d "$ZEPPELIN_TARGET_DIR" ]; then
     mkdir -p "$ZEPPELIN_TARGET_DIR"
     URL="https://dlcdn.apache.org/zeppelin/zeppelin-0.12.1/zeppelin-0.12.1-bin-all.tgz"
     wget "$URL" "$DOWNLOAD_ZEPPELIN"
-    tar -xvf "$DOWNLOAD_ZEPPELIN/$ARCHIVO" -C "$ZEPPELIN_TARGET_DIR"
+    tar -xvf "$DOWNLOAD_ZEPPELIN/$ARCHIVO" 
     rm -rf "$DOWNLOAD_ZEPPELIN/$ARCHIVO"
     # Ejecutamos tu script original de descarga directamente desde su ubicación actual
     # Esto evita tener que copiarlo manualmente con 'cp'
