@@ -3,7 +3,7 @@
 set -e
 set -x
 echo "🐍 Instalando dependencias de Python..."
-#pip3 install --no-cache-dir -r requirements.txt
+pip3 install --no-cache-dir -r requirements.txt
 
 echo "📦 Iniciando la configuración de Apache Zeppelin..."
 

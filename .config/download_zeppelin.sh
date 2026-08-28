@@ -14,6 +14,6 @@ ARCHIVO="zeppelin-0.12.1-bin-all.tgz"
     bash "$ZEPPELIN_TARGET_DIR/$NOMBRE_ARCHIVO/bin/zeppelin-daemon.sh start"
 else
     echo "ℹ️ Zeppelin ya se encuentra instalado en $ZEPPELIN_TARGET_DIR Omitiendo descarga."
-    
+    bash "$ZEPPELIN_TARGET_DIR/$NOMBRE_ARCHIVO/bin/zeppelin-daemon.sh start"
     rm -rf "$ARCHIVO"
 fi
