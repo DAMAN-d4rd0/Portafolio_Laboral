@@ -8,9 +8,10 @@ URL="https://dlcdn.apache.org/zeppelin/zeppelin-0.12.1/zeppelin-0.12.1-bin-all.t
 ARCHIVO="zeppelin-0.12.1-bin-all.tgz"
 CARPETA_ORIGINAL="zeppelin-0.12.1-bin-all" # <- El nombre que ya viene dentro del tar
 CARPETA_NUEVA="zeppeling"                  # <- El nombre que tú quieres
-
+RUTA_ZEPPELING="/home/vscode/"
+pwd
 echo "1. Descargando archivo..."
-
+cd "$RUTA_ZEPPELING"
 wget -q "$URL"
 
 echo "2. Descomprimiendo archivo..."
