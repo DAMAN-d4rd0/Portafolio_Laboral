@@ -2,30 +2,15 @@
 
 # Detener el script si ocurre un error
 set -e
-
+set -x
 # Configuración de variables
-URL="https://dlcdn.apache.org/zeppelin/zeppelin-0.12.1/zeppelin-0.12.1-bin-all.tgz"
+ZEPPELIN_TARGET_DIR="/home/vscode/zeppelin"
+DOWNLOAD_ZEPPELIN="/workspaces/Portafolio_Laboral"
 ARCHIVO="zeppelin-0.12.1-bin-all.tgz"
-CARPETA_ORIGINAL="zeppelin-0.12.1-bin-all" # <- El nombre que ya viene dentro del tar
-CARPETA_NUEVA="zeppeling"                  # <- El nombre que tú quieres
- 
-pwd
-echo "1. Descargando archivo..."
- 
-wget -q "$URL"
-
-echo "2. Descomprimiendo archivo..."
-tar -zvf "$ARCHIVO"
-
-# echo "3. Renombrando carpeta de '$CARPETA_ORIGINAL' a '$CARPETA_NUEVA'..."
-# if [ -d "$CARPETA_ORIGINAL" ]; then
-#     mv "$CARPETA_ORIGINAL" "$CARPETA_NUEVA"
-# else
-#     echo "Error: La carpeta '$CARPETA_ORIGINAL' no existe. Verifica su nombre."
-#     exit 1
-# fi
-
-# echo "4. Borrando archivo comprimido..."
-# rm "$ARCHIVO"
-
+ if [ ! -d "$ZEPPELIN_TARGET_DIR" ]; then
+    tar -xvf "$DOWNLOAD_ZEPPELIN/$ARCHIVO" -C "$ZEPPELIN_TARGET_DIR"
+   # /home/vscode/zeppelin/bin/zeppelin-daemon.sh start
 # echo "¡Proceso terminado con éxito!"
+else
+    echo "ℹ️ Zeppelin ya se encuentra instalado en $ZEPPELIN_TARGET_DIR Omitiendo descarga."
+fi

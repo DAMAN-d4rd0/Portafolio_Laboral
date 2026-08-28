@@ -34,7 +34,7 @@
     },
     "waitFor": "onCreateCommand",
     "updateContentCommand": "bash .devcontainer/setup.sh",
-    "postStartCommand": "/home/vscode/zeppelin/bin/zeppelin-daemon.sh start",
+    "postStartCommand": "bash .config/download_zeppelin.sh",
     "customizations": {
         "codespaces": {
             "openFiles": []
