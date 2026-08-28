@@ -16,7 +16,7 @@ if [ ! -d "$ZEPPELIN_TARGET_DIR" ]; then
     echo "⬇️ Descargando Zeppelin (usando tu script original)..."
     mkdir -p "$ZEPPELIN_TARGET_DIR"
     URL="https://dlcdn.apache.org/zeppelin/zeppelin-0.12.1/zeppelin-0.12.1-bin-all.tgz"
-    wget "$URL" "$DOWNLOAD_ZEPPELIN"
+    wget "$URL"
 
     
     echo "✅ Descarga completa"
