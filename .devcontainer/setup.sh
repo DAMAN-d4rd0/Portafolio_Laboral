@@ -8,7 +8,7 @@ echo "🐍 Instalando dependencias de Python..."
 echo "📦 Iniciando la configuración de Apache Zeppelin..."
 
 # Definir rutas
-ZEPPELIN_TARGET_DIR="./home/vscode/zeppelin"
+ZEPPELIN_TARGET_DIR="/home/vscode/.zeppelin"
 
 ARCHIVO="zeppelin-0.12.1-bin-all.tgz"
 # Comprobar si Zeppelin ya está instalado para no repetir la descarga si el contenedor se reconstruye
