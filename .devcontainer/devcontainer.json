@@ -32,7 +32,7 @@
             "visibility": "public" 
         }
     },
-    "updateContentCommand": "pip3 install -r requirements.txt && cp ./config/download_zeppelin.sh /home/vscode/ && chmod +x /home/vscode/download_zeppelin.sh && .home/vscode/download_zeppelin.sh ",
+    "updateContentCommand": "python3 -m pip install -r requirements.txt && cp ./config/download_zeppelin.sh /home/vscode/ && chmod +x /home/vscode/download_zeppelin.sh && .home/vscode/download_zeppelin.sh ",
     "postStartCommand": "/home/vscode/zeppelin/bin/zeppelin-daemon.sh start",
     "customizations": {
         "codespaces": {
