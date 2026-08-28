@@ -30,7 +30,7 @@
             "onAutoForward": "openPreview"
         }
     },
-    "postCreateCommand": "sudo apt-get update && sudo apt-get upgrade -y && pip3 install -r requirements.txt && wget -q https://apache.org && tar -xzf zeppelin-0.11.0-bin-all.tgz && mv zeppelin-0.11.0-bin-all /home/vscode/zeppelin && rm zeppelin-0.11.0-bin-all.tgz",
+    "postCreateCommand": "pip3 install -r requirements.txt && wget -q https://apache.org && tar -xzf zeppelin-0.11.0-bin-all.tgz && mv zeppelin-0.11.0-bin-all /home/vscode/zeppelin && rm zeppelin-0.11.0-bin-all.tgz",
     "postStartCommand": "/home/vscode/zeppelin/bin/zeppelin-daemon.sh start",
     "customizations": {
         "codespaces": {
