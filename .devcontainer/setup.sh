@@ -9,11 +9,12 @@ echo "📦 Iniciando la configuración de Apache Zeppelin..."
 
 # Definir rutas
 ZEPPELIN_TARGET_DIR="/home/vscode/zeppelin"
-mkdir -p "$ZEPPELIN_TARGET_DIR"
+
 ARCHIVO="zeppelin-0.12.1-bin-all.tgz"
 # Comprobar si Zeppelin ya está instalado para no repetir la descarga si el contenedor se reconstruye
 if [ ! -d "$ZEPPELIN_TARGET_DIR" ]; then
     echo "⬇️ Descargando Zeppelin (usando tu script original)..."
+    mkdir -p "$ZEPPELIN_TARGET_DIR"
     URL="https://dlcdn.apache.org/zeppelin/zeppelin-0.12.1/zeppelin-0.12.1-bin-all.tgz"
     wget "$URL" "$TARGET_DIR"
 
