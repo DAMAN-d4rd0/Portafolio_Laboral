@@ -1,11 +1,9 @@
 {
     "name": "Jupyter & Apache Zeppelin Codespace",
-
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
     "hostRequirements": {
         "cpus": 2
     },
-
     "features": {
         "ghcr.io/devcontainers/features/java:1": {
             "version": "21",
@@ -24,12 +22,12 @@
         "8080": {
             "label": "Apache Zeppelin UI",
             "onAutoForward": "openPreview",
-            "visibility": "public" 
+            "visibility": "public"
         },
         "8888": {
             "label": "Jupyter Notebook UI",
             "onAutoForward": "openPreview",
-            "visibility": "public" 
+            "visibility": "public"
         }
     },
     "waitFor": "onCreateCommand",
@@ -43,8 +41,10 @@
             "extensions": [
                 "ms-toolsai.jupyter",
                 "ms-python.python",
-                "AllenLi1231.zeppelin-vscode"
+                "AllenLi1231.zeppelin-vscode",
+                "ms-vscode-remote.vscode-remote-extensionpack"
             ]
         }
     }
+
 }
