@@ -18,11 +18,11 @@ nbconvert
 nbformat
 notebook
 traitlets
-grpcio
-protobuf
+grpcio==1.62.2
+grpcio-tools==1.62.2
+protobuf==4.25.3
 jupyter-cli
 jupyter
 setuptools
 wheel
-grpcio-tools
 py4j
