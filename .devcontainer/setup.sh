@@ -6,7 +6,7 @@ PROJECT_DIR=$(pwd)
 NOTEBOOK_ZEPPELIN="notebook_zeppelin"
 NOTEBOOK_JUPYTER="notebook_jupyter"
 PATH_ZEPPELIN="zeppelin"
-
+$JUPYTER_DIR="jupyter"
 ##====================Seteo de variables globales en el contenedor
 #Se configura el espacio  del trabajo en github o en el lucal de acuerdo a la invocacion
 if ! grep -q "export WORKSPACE=$PROJECT_DIR" ~/.bashrc; then
@@ -26,7 +26,9 @@ if ! grep -q "export NOTEBOOK_JUPYTER=$NOTEBOOK_JUPYTER" ~/.bashrc; then
     echo "export NOTEBOOK_JUPYTER=$NOTEBOOK_JUPYTER" >> ~/.bashrc
 fi
 
- 
+ if ! grep -q "export JUPYTER_DIR=$HOME/$JUPYTER_DIR" ~/.bashrc; then
+    echo "export JUPYTER_DIR=$HOME/$JUPYTER_DIR" >> ~/.bashrc
+fi
 ##===================Seteo de variables del documentos
 ZEPPELIN_INSTALL_DIR="$HOME/$PATH_ZEPPELIN"
 

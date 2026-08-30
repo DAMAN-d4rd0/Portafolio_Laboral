@@ -29,20 +29,30 @@ echo "Se cargan las librerias de python"
 python3 -m pip install --upgrade pip
 python3 -m pip install -r "$DOWNLOAD_ZEPPELIN/requirements.txt"
 sleep 5
+
+JUPYTER_DIR="jupyter"
+
+echo "$HOME/$JUPYTER_DIR"
+if [ ! -d "$HOME/JUPYTER_DIR" ]; then
+    # echo "$HOME/$JUPYTER_DIR"
+    mkdir -p "$HOME/$JUPYTER_DIR"
+    cp -r "$DOWNLOAD_ZEPPELIN/.config/jupyter-daemon.sh" "$HOME/$JUPYTER_DIR"
+fi
+###============= Creacion de carpetas de home
+# mkdir -p "$PROJECT_DIR/$NOTEBOOK_JUPYTER"
+
+
 ###====== Se habilita las carpeta jupyter en el area de trabajo
+
+
+
 echo "Creacion de carpeta de jupyter"
 
-echo "$PROJECT_DIR/$NOTEBOOK_JUPYTER"
+echo "$PROJECT_DIR/$NOTEBOOK_JUPYTER  <<<<<<<<<<<< < crear carpeta"
 if [ ! -d "$PROJECT_DIR/$NOTEBOOK_JUPYTER" ] ; then
     mkdir -p "$PROJECT_DIR/$NOTEBOOK_JUPYTER"
+    cp -r "$DOWNLOAD_ZEPPELIN/.config/examples" "$PROJECT_DIR/$NOTEBOOK_JUPYTER"
 fi
-
-###=========== Se copian unos ejemplos de jupyter
-echo "Copia de ejemplos jupyter"
-cp -r "$DOWNLOAD_ZEPPELIN/.config/examples" "$PROJECT_DIR/$NOTEBOOK_JUPYTER"
-
-
-
 
 ###=========== Se crea el espacio de trabajo para zeppelin y se copian los ejemplos
 WORKSPACE_ZEPPELIN="notebook_zeppelin"
@@ -51,24 +61,14 @@ if [ ! -d "$PROJECT_DIR/$NOTEBOOK_ZEPPELIN" ]; then
     cp -r "$ZEPPELIN_TARGET_DIR/notebook" "$PROJECT_DIR/$NOTEBOOK_ZEPPELIN"
 fi
 
-###========= Se copian los ejemplos de zeppelin
-# echo "copia de ejemplos zeppelin"
-# echo "$ZEPPELIN_TARGET_DIR/notebook_zeppelin"
-# echo "$PROJECT_DIR/notebook_zeppelin"
-# if [ ! -d "$ZEPPELIN_TARGET_DIR/nnotebook_zeppelin" ]; then
-#     echo "Se copia $ZEPPELIN_TARGET_DIR/notebook_zeppelin"
-#     cp -r "$ZEPPELIN_TARGET_DIR/notebook" "$PROJECT_DIR/notebook_zeppelin"
-# fiW
-# cp -r "$ZEPPELIN_TARGET_DIR/notebook" "$PROJECT_DIR/notebook_zeppelin"
-# ###======= Se inicia el demonio zeppelin
-
-
 # "$ZEPPELIN_TARGET_DIR/bin/zeppelin-daemon.sh" start
 # "$ZEPPELIN_TARGET_DIR/bin/zeppelin-daemon.sh" restart
-echo "$PROJECT_DIR/$NOTEBOOK_JUPYTER  --invocar al mero"
+# echo "$PROJECT_DIR/$NOTEBOOK_JUPYTER  --invocar al mero"
+# sleep 5
+# nohup jupyter notebook --NotebookApp.token='' --NotebookApp.password='' --notebook-dir="$PROJECT_DIR/$NOTEBOOK_JUPYTER" > /home/vscode/jupyter/jupyter.log 2>&1 &
 sleep 5
-nohup jupyter notebook --NotebookApp.token='' --NotebookApp.password='' --notebook-dir="$PROJECT_DIR/$NOTEBOOK_JUPYTER" > /home/vscode/jupyter.log 2>&1 &
-sleep 5
+
+# jupyter notebook --NotebookApp.token='' --NotebookApp.password='' --notebook-dir='notebook_jupyter' > /home/vscode/jupyter/jupyter.log 2>&1 &
 
 # jupyter notebook --NotebookApp.token='' --NotebookApp.password='' --notebook-dir='notebook_jupyter' > /home/vscode/jupyter.log 2>&1 &
 # jupyter notebook stop 8888
