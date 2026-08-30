@@ -2,7 +2,7 @@
    
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
     "hostRequirements": {
-        "cpus": 2
+        "cpus": 4
     },
     "features": {
         "ghcr.io/devcontainers/features/java:1": {
@@ -22,12 +22,12 @@
         "8080": {
             "label": "Apache Zeppelin UI",
             "onAutoForward": "openPreview",
-            "visibility": "public"
+            "visibility": "private"
         },
         "8888": {
             "label": "Jupyter Notebook UI",
             "onAutoForward": "openPreview",
-            "visibility": "public"
+            "visibility": "private"
         }
     },
     "waitFor": "onCreateCommand",
