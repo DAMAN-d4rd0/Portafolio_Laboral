@@ -22,16 +22,16 @@ if [ ! -d "$DOWNLOAD_ZEPPELIN/$ARCHIVO" ]; then
     mv "$NOMBRE_ARCHIVO" "$ZEPPELIN_TARGET_DIR"
     rm -rf "$ARCHIVO"
 fi
-
+sleep 5
 
 ###================ Se cargan librerias necesario de zeppelin y jupyter
 echo "Se cargan las librerias de python"
-python -m pip install --upgrade pip
-python -m pip install -r "$DOWNLOAD_ZEPPELIN/requirements.txt"
-
+python3 -m pip install --upgrade pip
+python3 -m pip install -r "$DOWNLOAD_ZEPPELIN/requirements.txt"
+sleep 5
 ###====== Se habilita las carpeta jupyter en el area de trabajo
 echo "Creacion de carpeta de jupyter"
-NOTEBOOK_JUPYTER="notebook_jupyter"
+
 echo "$PROJECT_DIR/$NOTEBOOK_JUPYTER"
 if [ ! -d "$PROJECT_DIR/$NOTEBOOK_JUPYTER" ] ; then
     mkdir -p "$PROJECT_DIR/$NOTEBOOK_JUPYTER"
@@ -58,12 +58,15 @@ fi
 # if [ ! -d "$ZEPPELIN_TARGET_DIR/nnotebook_zeppelin" ]; then
 #     echo "Se copia $ZEPPELIN_TARGET_DIR/notebook_zeppelin"
 #     cp -r "$ZEPPELIN_TARGET_DIR/notebook" "$PROJECT_DIR/notebook_zeppelin"
-# fi
+# fiW
 # cp -r "$ZEPPELIN_TARGET_DIR/notebook" "$PROJECT_DIR/notebook_zeppelin"
 # ###======= Se inicia el demonio zeppelin
 
 
 # "$ZEPPELIN_TARGET_DIR/bin/zeppelin-daemon.sh" start
 # "$ZEPPELIN_TARGET_DIR/bin/zeppelin-daemon.sh" restart
-
-nohup jupyter notebook --NotebookApp.token='' --NotebookApp.password='' --notebook-dir="$PROJECT_DIR/$NOTEBOOK_JUPYTER" /dev/null 2>&1 &
+echo "$PROJECT_DIR/$NOTEBOOK_JUPYTER  --invocar al mero"
+sleep 5
+nohup jupyter notebook --NotebookApp.token='' --NotebookApp.password='' --notebook-dir="$PROJECT_DIR/$NOTEBOOK_JUPYTER" > /home/vscode/jupyter.log 2>&1 &
+sleep 5
+# jupyter notebook --NotebookApp.token='' --NotebookApp.password='' --notebook-dir="$PROJECT_DIR/$NOTEBOOK_JUPYTER" 

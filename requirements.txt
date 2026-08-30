@@ -1,3 +1,5 @@
+torch
+torchvision
 matplotlib
 pandas
 tqdm
@@ -7,9 +9,9 @@ filelock
 Pygments
 ipykernel
 ipywidgets
-jupyter_client
-jupyter_core
-jupyter_server
+jupyter-client
+jupyter-core
+jupyter-server
 jupyterlab
 nbclient
 nbconvert
@@ -22,8 +24,5 @@ jupyter-cli
 jupyter
 setuptools
 wheel
-grpcio
 grpcio-tools
-torch
-torchvision
 py4j

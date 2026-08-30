@@ -4,6 +4,7 @@
 set -x
 PROJECT_DIR=$(pwd)
 NOTEBOOK_ZEPPELIN="notebook_zeppelin"
+NOTEBOOK_JUPYTER="notebook_jupyter"
 PATH_ZEPPELIN="zeppelin"
 
 ##====================Seteo de variables globales en el contenedor
@@ -21,6 +22,10 @@ fi
 if ! grep -q "export ZEPPELIN_INSTALL_DIR=$HOME/$PATH_ZEPPELIN" ~/.bashrc; then
     echo "export ZEPPELIN_INSTALL_DIR=$HOME/$PATH_ZEPPELIN" >> ~/.bashrc
 fi
+if ! grep -q "export NOTEBOOK_JUPYTER=$NOTEBOOK_JUPYTER" ~/.bashrc; then
+    echo "export NOTEBOOK_JUPYTER=$NOTEBOOK_JUPYTER" >> ~/.bashrc
+fi
+
  
 ##===================Seteo de variables del documentos
 ZEPPELIN_INSTALL_DIR="$HOME/$PATH_ZEPPELIN"
