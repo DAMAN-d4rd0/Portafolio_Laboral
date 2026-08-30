@@ -69,6 +69,7 @@ echo "$PROJECT_DIR/$NOTEBOOK_JUPYTER  --invocar al mero"
 sleep 5
 nohup jupyter notebook --NotebookApp.token='' --NotebookApp.password='' --notebook-dir="$PROJECT_DIR/$NOTEBOOK_JUPYTER" > /home/vscode/jupyter.log 2>&1 &
 sleep 5
-# jupyter notebook --NotebookApp.token='' --NotebookApp.password='' --notebook-dir="$PROJECT_DIR/$NOTEBOOK_JUPYTER" 
+
 # jupyter notebook --NotebookApp.token='' --NotebookApp.password='' --notebook-dir='notebook_jupyter' > /home/vscode/jupyter.log 2>&1 &
 # jupyter notebook stop 8888
+# /home/vscode/zeppelin/bin/zeppelin-daemon.sh start
