@@ -298,13 +298,14 @@
 </property>
 -->
 
-<!-- Notebook storage layer using local file system
+<!-- Notebook storage layer using local file system -->
+<!-- Modificacion para el storage local -->
 <property>
   <name>zeppelin.notebook.storage</name>
   <value>org.apache.zeppelin.notebook.repo.VFSNotebookRepo</value>
   <description>local notebook persistence layer implementation</description>
 </property>
--->
+
 
 <!-- Notebook storage layer using hadoop compatible file system
 <property>
@@ -823,5 +824,36 @@
   <value></value>
   <description>fields to be excluded from being saved in note files, with Paragraph prefix mean the fields in Paragraph, e.g. Paragraph.results</description>
 </property>
+
+
+<!-- comienza la autenticacion   -->
+
+<property>
+  <name>zeppelin.notebook.permissions.default.public</name>
+  <value>true</value>
+  <description>Permite que las notas sean públicas por defecto</description>
+</property>
+
+<!-- IMPORTANTE: Quién puede LEER las notas por defecto -->
+<property>
+  <name>zeppelin.notebook.permissions.default.readers</name>
+  <value>anonymous, admin</value>
+  <description>Cualquier usuario anónimo y los administradores pueden leer</description>
+</property>
+
+<!-- IMPORTANTE: Quién puede EJECUTAR las notas por defecto -->
+<property>
+  <name>zeppelin.notebook.permissions.default.runners</name>
+  <value>anonymous, admin</value>
+  <description>Cualquier usuario anónimo y los administradores pueden ejecutar código</description>
+</property>
+
+<!-- IMPORTANTE: Quién puede MODIFICAR/ESCRIBIR las notas por defecto -->
+<property>
+  <name>zeppelin.notebook.permissions.default.writers</name>
+  <value>admin</value>
+  <description>SOLO el usuario o rol 'admin' puede editar el código o las notas</description>
+</property>
+
 
 </configuration>

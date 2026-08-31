@@ -1,12 +1,14 @@
 #!/bin/bash
 # Detener la ejecución si ocurre cualquier error durante el proceso
-# set -e
-set -x
+set -e
+# set -x
+VERDE='\033[0;32m'
+SIN_COLOR='\033[0m'
 PROJECT_DIR=$(pwd)
 NOTEBOOK_ZEPPELIN="notebook_zeppelin"
 NOTEBOOK_JUPYTER="notebook_jupyter"
 PATH_ZEPPELIN="zeppelin"
-$JUPYTER_DIR="jupyter"
+JUPYTER_DIR="jupyter"
 ##====================Seteo de variables globales en el contenedor
 #Se configura el espacio  del trabajo en github o en el lucal de acuerdo a la invocacion
 if ! grep -q "export WORKSPACE=$PROJECT_DIR" ~/.bashrc; then
@@ -40,4 +42,5 @@ if [ ! -d "$ZEPPELIN_INSTALL_DIR" ]; then
     echo "Iniciando la descarga de Apache Zeppelin..."
     URL="https://dlcdn.apache.org/zeppelin/zeppelin-0.12.1/zeppelin-0.12.1-bin-all.tgz"
     wget "$URL"
+    printf "%-60s [  ${VERDE}OK${SIN_COLOR}  ]\n" "Descarga de Zeppelin"
 fi

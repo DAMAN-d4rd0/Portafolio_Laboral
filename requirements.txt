@@ -26,3 +26,4 @@ jupyter
 setuptools
 wheel
 py4j
+pydantic

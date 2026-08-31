@@ -1,15 +1,14 @@
 #!/bin/bash
 #
 # description: Start and stop daemon script for.
-#
-#!/bin/bash
-
+VERDE='\033[0;32m'
+SIN_COLOR='\033[0m'
 # Definición de variables globales
 export JUPYTER_DIR="$HOME/jupyter"
 PID_FILE="$JUPYTER_DIR/jupyter.pid"
 WORKSPACE_JUPYTER="$WORKSPACE/$NOTEBOOK_JUPYTER"
 USAGE="Uso: $0 {start|stop|status}"
-
+SET_ERROR="OK"
 # Función para iniciar el servicio
 start() {
     echo "Iniciando el servicio..."
@@ -23,13 +22,14 @@ start() {
         # 3. Guardas el PID en un archivo de texto para poder usarlo después en 'stop'
         local pid=$!
         echo "$pid" > "$PID_FILE"
-
-        echo "Servicio iniciado con el PID: $pid"
+         printf "%-60s [  ${VERDE}OK${SIN_COLOR}  ]\n" "Jupyter Notebook is active"
+        # echo "Servicio iniciado con el PID: $pid"
         # Añade aquí tus comandos reales para arrancar el programa
         # Ejemplo: /ruta/a/mi/programa --daemon
         # nohup jupyter notebook --NotebookApp.token='' --NotebookApp.password='' --notebook-dir="$PROJECT_DIR/$NOTEBOOK_JUPYTER" > /home/vscode/jupyter.log 2>&1 &
     else    
-        echo "El servicio esta iniciado !! "
+
+        printf "%-60s [  ${VERDE}OK${SIN_COLOR}  ]\n" "Jupyter Notebook is alive"
 
     fi
 }
@@ -49,9 +49,9 @@ stop() {
 
         # Mover y renombrar el archivo PID en lugar de borrarlo
         mv "$PID_FILE" "${JUPYTER_DIR}/${fecha}_pid.log"
-        echo "Servicio con PID $pid detenido correctamente."
+         printf "%-60s [  ${VERDE}OK${SIN_COLOR}  ]\n" "Jupyter Notebook is shutdown"
     else
-        echo "El servicio no parece estar en ejecución (no se encontró el archivo PID)."
+        printf "%-60s [  ${VERDE}!!${SIN_COLOR}  ]\n" "Jupyter Notebook is no runnig"
     fi
     # jupyter notebook stop 8888
     # kill $(pgrep -f jupyter)

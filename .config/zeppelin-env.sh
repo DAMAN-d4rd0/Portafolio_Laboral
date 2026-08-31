@@ -37,7 +37,7 @@ export WORKSPACE_ZEPPELIN="notebook_zeppelin"
 # export ZEPPELIN_LOG_DIR                       # Where log files are stored.  PWD by default.
 # export ZEPPELIN_PID_DIR                       # The pid files are stored. ${ZEPPELIN_HOME}/run by default.
 # export ZEPPELIN_WAR_TEMPDIR                   # The location of jetty temporary directory.
-export ZEPPELIN_NOTEBOOK_DIR="$PWD/$WORKSPACE_ZEPPELIN"             # Where notebook saved
+# export ZEPPELIN_NOTEBOOK_DIR="$PWD/$WORKSPACE_ZEPPELIN"             # Where notebook saved
 # export ZEPPELIN_NOTEBOOK_HOMESCREEN           # Id of notebook to be displayed in homescreen. ex) 2A94M5J1Z
 # export ZEPPELIN_NOTEBOOK_HOMESCREEN_HIDE      # hide homescreen notebook from list when this value set to "true". default "false"
 
