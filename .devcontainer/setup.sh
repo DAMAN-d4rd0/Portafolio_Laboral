@@ -1,7 +1,7 @@
 #!/bin/bash
 # Detener la ejecución si ocurre cualquier error durante el proceso
-set -e
-# set -x
+# set -e
+set -x
 VERDE='\033[0;32m'
 SIN_COLOR='\033[0m'
 PROJECT_DIR=$(pwd)

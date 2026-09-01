@@ -66,7 +66,7 @@ export WORKSPACE_ZEPPELIN="notebook_zeppelin"
 # export ZEPPELIN_HELIUM_YARNPKG_INSTALLER_URL  # Remote Yarn package installer url for Helium dependency loader
 # export ZEPPELIN_NOTEBOOK_STORAGE              # Refers to pluggable notebook storage class, can have two classes simultaneously with a sync between them (e.g. local and remote).
 # export ZEPPELIN_NOTEBOOK_ONE_WAY_SYNC         # If there are multiple notebook storages, should we treat the first one as the only source of truth?
-# export ZEPPELIN_NOTEBOOK_PUBLIC               # Make notebook public by default when created, private otherwise
+export ZEPPELIN_NOTEBOOK_PUBLIC=true          # Make notebook public by default when created, private otherwise
 
 # export DOCKER_TIME_ZONE # Set to the same time zone as the zeppelin server. E.g, "America/New_York" or "Asia/Shanghai"
 
@@ -94,7 +94,7 @@ export WORKSPACE_ZEPPELIN="notebook_zeppelin"
 # Pyspark (supported with Spark 3.3 and above)
 # To configure pyspark, you need to set spark distribution's path to 'spark.home' property in Interpreter setting screen in Zeppelin GUI
 # export PYSPARK_PYTHON                         # path to the python command. must be the same path on the driver(Zeppelin) and all workers.
-# export PYTHONPATH
+# export PYTHONPATH="/usr/local/python/current/bin/python3"
 
 ## Spark interpreter options ##
 ##
@@ -114,5 +114,3 @@ export WORKSPACE_ZEPPELIN="notebook_zeppelin"
 #### Zeppelin impersonation configuration
 # export ZEPPELIN_IMPERSONATE_CMD       # Optional, when user want to run interpreter as end web user. eg) (sudo -H -u "${ZEPPELIN_IMPERSONATE_USER}" bash -c)
 # export ZEPPELIN_IMPERSONATE_SPARK_PROXY_USER  #Optional, by default is true; can be set to false if you don't want to use --proxy-user option with Spark interpreter when impersonation enabled
-echo $ZEPPELIN_NOTEBOOK_DIR
-echo $WORKSPACE_ZEPPELIN

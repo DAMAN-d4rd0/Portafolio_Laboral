@@ -826,8 +826,7 @@
 </property>
 
 
-<!-- comienza la autenticacion   -->
-
+<!-- CONFIGURACIÓN DE SEGURIDAD PARA USUARIOS ANÓNIMOS -->
 <property>
   <name>zeppelin.notebook.permissions.default.public</name>
   <value>true</value>
@@ -855,5 +854,10 @@
   <description>SOLO el usuario o rol 'admin' puede editar el código o las notas</description>
 </property>
 
+<property>
+  <name>zeppelin.anonymous.allowed</name>
+  <value>true</value>
+  <description>Permite conexiones WebSocket de usuarios no autenticados</description>
+</property>
 
 </configuration>
