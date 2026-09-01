@@ -38,6 +38,7 @@ echo "la ruta del usuario vscode $HOME"
 echo "la ruta del proyecto $PROJECT_DIR"
 echo "la ruta de la instalacion de zeppelin $ZEPPELIN_INSTALL_DIR"
 
+
 if [ ! -d "$ZEPPELIN_INSTALL_DIR" ]; then
     echo "Iniciando la descarga de Apache Zeppelin..."
     URL="https://dlcdn.apache.org/zeppelin/zeppelin-0.12.1/zeppelin-0.12.1-bin-all.tgz"
